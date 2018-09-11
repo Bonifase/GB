@@ -1,11 +1,42 @@
 import React from 'react';
+import { Form, Button } from 'semantic-ui-react';
 
-class LoginForm extends React.component {
-    state = {}
+class LoginForm extends React.Component {
+    state = {
+        data: {
+            email: '',
+            password: ''
+        },
+        loading: false,
+        errors: {}
+    }; 
+
+    onChange = e => this.setState({data: { ...this.state.data, [e.target.name]: e.target.value}});
 
     render() {
+        const { data } = this.state;
         return (
-            <div></div>
+            <Form>
+                <Form.Field>
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="example@email"
+                      value={data.email}
+                      onChange={ this.onChange} />
+                </Form.Field>
+                <Form.Field>
+                    <label htmlFor="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="make it secure"
+                      value={data.password}
+                      onChange={ this.onChange} />
+                </Form.Field>
+                <Button primary>Login</Button>
+            </Form>
         );
     }
 }
