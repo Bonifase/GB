@@ -5,7 +5,7 @@ const InlineError = ({ text }) => (
   <span style={{ color: "#ae5856" }}>{text}</span>
 );
 
-InlineError.PropTypes = {
+InlineError.propTypes = {
       text: PropTypes.string.isRequired
   };
 
