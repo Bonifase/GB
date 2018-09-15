@@ -6,4 +6,7 @@ export const userLoggedIn = (user) => ({
     user
 });
 
-export const login = (credentials) => dispatch => api.user.login(credentials).then(user => dispatch(userLoggedIn(user)));
+export const login = (credentials) => dispatch => api.user.login(credentials).then(user => {
+    localStorage.JWT = user.token;
+    dispatch(userLoggedIn(user));
+});
