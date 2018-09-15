@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { login } from '../../actions/auth';
 
-class DashboardPage extends React.Component {
-    
-    render(){
-        return (
-            <div>
-              <h1>Dashboard page</h1>   
-            </div>
-        );
+const DashboardPage = ({ isConfirmed }) => (
+    <div>
+        {!isConfirmed && <ConfirmEmailMessage />}
+    </div>
+);
+DashboardPage.propTypes = {
+    isConfirmed: PropTypes.bool.isRequired
+};
+
+function mapStateToProps(state) {
+    return {
+        isConfirmed: !!state.user.confirmed 
     }
-} 
+}
 
-export default DashboardPage;
+export default connect(mapStateToProps)(DashboardPage);
