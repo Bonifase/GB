@@ -8,14 +8,6 @@ const ConfirmEmailMessage = () => (
         <Message.Header>Please verify your email to unlock awesomeness</Message.Header>
     </Message>
 );
-// DashboardPage.propTypes = {
-//     isConfirmed: PropTypes.bool.isRequired
-// };
 
-// function mapStateToProps(state) {
-//     return {
-//         isConfirmed: !!state.user.confirmed 
-//     }
-// }
 
 export default ConfirmEmailMessage;
