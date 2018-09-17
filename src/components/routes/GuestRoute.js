@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 
-const GuestRoute = ({ isAuthenticated, component: component, ...rest}) => (
-    <Route {...rest} render={props => isAuthenticated ? <Redirect to='/dashboard' /> : <component {...props} />} />
+const GuestRoute = ({ isAuthenticated, component: Component, ...rest}) => (
+    <Route {...rest} render={props => !isAuthenticated ?  <Component {...props} /> : <Redirect to='/dashboard' />} />
 );
 
 GuestRoute.propTypes = {
