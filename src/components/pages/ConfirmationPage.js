@@ -25,13 +25,20 @@ class ConfirmationPage extends React.Component {
                <Message.Header>Validating your Email</Message.Header>
               </Message>)}
 
-              {!loading && success && <Message success icon>
+              {!loading && success && (<Message success icon>
                <Icon name="checkmark"/>
                <Message.Content>
                <Message.Header>Thank you. Your account has been verified</Message.Header>
                <Link to="/dashboard">Go to your dashboard</Link>
                </Message.Content>
-              </Message> }
+              </Message>) }
+
+              {!loading && !success && (<Message negative icon>
+               <Icon name="warning sign"/>
+               <Message.Content>
+               <Message.Header>Oops. Invalid token</Message.Header> 
+               </Message.Content>
+              </Message>)}
             </div>
         );
     }
