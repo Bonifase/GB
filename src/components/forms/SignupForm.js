@@ -26,6 +26,7 @@ class SignupForm extends React.Component {
     };
     validate = (data) =>{
         const errors = {};
+        if (!data.username) errors.username = "Username can't be blank";
         if (!Validator.isEmail(data.email)) errors.email = "Please provide a valid email";
         if (!data.password) errors.password = "Password can't be blank";
         return errors;
@@ -38,6 +39,17 @@ class SignupForm extends React.Component {
             { errors.global && <Message negative>
             <Message.Header>{ errors.global }</Message.Header>
             </Message> }
+               <Form.Field error={!!errors.email}>
+                    <label htmlFor="username">Username</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      placeholder="Prefered Username"
+                      value={data.username}
+                      onChange={ this.onChange} />
+                      {errors.username && <InlineError text={errors.username}/>}
+                </Form.Field>
                 <Form.Field error={!!errors.email}>
                     <label htmlFor="email">Email</label>
                     <input
