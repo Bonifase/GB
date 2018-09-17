@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LoginForm from '../forms/LoginForm';
-import { login } from '../../actions/auth';
+import SignupForm from '../forms/SignupForm';
+import { signup } from '../../actions/auth';
 
 class SignupPage extends React.Component {
     submit = (data) => this.props.signup(data).then(() => this.props.history.push("/dashboard"));
