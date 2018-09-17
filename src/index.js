@@ -22,7 +22,7 @@ if (localStorage.JWT){
 ReactDOM.render(
 <BrowserRouter>
   <Provider store={store}>
-    <App />
+    <Route component={App} />
   </Provider>
 </BrowserRouter>, document.getElementById('root')
 );
