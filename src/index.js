@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import decode from 'jwt-decode';
 import { composeWithDevTools } from 'remote-redux-devtools';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './rootReducer';
