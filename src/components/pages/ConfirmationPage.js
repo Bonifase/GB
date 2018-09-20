@@ -1,55 +1,57 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import LoginForm from '../forms/LoginForm';
-import { confirm } from '../../actions/auth';
-import { Message, Icon } from 'semantic-ui-react';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { confirm } from "../../actions/auth";
 
 class ConfirmationPage extends React.Component {
-    state = {
-        loading: true,
-        success: false
-    }
-    componentDidMount() {
-        this.props.confirm(this.props.match.params.token)
-        .then(() => this.setState({loading: false, success: true}))
-        .catch(() => this.setState({loading: true, success: false}))
-    }
-    render(){
-        const { loading, success } = this.state
-        return (
-            <div>
-              { loading && (<Message icon>
-               <Icon name="circle notched" loading/>
-               <Message.Header>Validating your Email</Message.Header>
-              </Message>)}
+  state = {
+    loading: true,
+    success: false
+  };
 
-              {!loading && success && (<Message success icon>
-               <Icon name="checkmark"/>
-               <Message.Content>
-               <Message.Header>Thank you. Your account has been verified</Message.Header>
-               <Link to="/dashboard">Go to your dashboard</Link>
-               </Message.Content>
-              </Message>) }
+  componentDidMount() {
+    this.props
+      .confirm(this.props.match.params.token)
+      .then(() => this.setState({ loading: false, success: true }))
+      .catch(() => this.setState({ loading: false, success: false }));
+  }
 
-              {!loading && !success && (<Message negative icon>
-               <Icon name="warning sign"/>
-               <Message.Content>
-               <Message.Header>Oops. Invalid token</Message.Header> 
-               </Message.Content>
-              </Message>)}
+  render() {
+    const { loading, success } = this.state;
+
+    return (
+      <div className="container-fluid">
+        {loading && (
+          <div className="alert alert-info">Validating your account...</div>
+        )}
+
+        {!loading &&
+          success && (
+            <div className="alert alert-success">
+              Thank you! Your account has been verified. Now you can go to your
+              <Link to="/dashboard"> dashboard</Link>
             </div>
-        );
-    }
-} 
+          )}
+
+        {!loading &&
+          !success && (
+            <div className="alert alert-danger">
+              Ooops. Invalid token it seems.
+            </div>
+          )}
+      </div>
+    );
+  }
+}
+
 ConfirmationPage.propTypes = {
-    confirm: PropTypes.func.isRequired,
-    match: PropTypes.shape({
-        params: PropTypes.shape({
-            token: PropTypes.string.isRequired
-        }).isRequired
-    }).isRequired,
+  confirm: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      token: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 export default connect(null, { confirm })(ConfirmationPage);
