@@ -20,7 +20,7 @@ Alternatively, you can add `.env` file in the root folder of project to set envi
 
 ### Making requests to the backend API
 
-For convenience, we have a live API server running at https://web-game-board-api.herokuapp.com/api for the application to make requests against.
+For convenience, we have a live API server running at [Game Board API](https://web-game-board-api.herokuapp.com/api) for the application to make requests against.
 
 The source code for the backend server (available for Node) can be found in the [Game board api](https://github.com/Bonifase/Game-board-api).
 
