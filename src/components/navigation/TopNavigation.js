@@ -43,7 +43,7 @@ class TopNavigation extends React.Component {
               <DropdownToggle nav>
                 <img
                   className="img-fluid rounded-circle"
-                  src={gravatarUrl(user.email, { size: 40 })}
+                  src={gravatarUrl(user.email, { size: 25 })}
                   alt="Gravatar"
                 />
               </DropdownToggle>
