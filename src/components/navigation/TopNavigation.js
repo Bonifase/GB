@@ -30,7 +30,7 @@ class TopNavigation extends React.Component {
 
     return (
       <Navbar light expand="sm" color="faded">
-        <NavbarBrand href="/">ALHub</NavbarBrand>
+        <NavbarBrand href="/">GameBoard</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
