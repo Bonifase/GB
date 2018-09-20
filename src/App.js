@@ -9,6 +9,7 @@ import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import LoginPage from './components/pages/LoginPage';
 import DashboardPage from './components/pages/DashboardPage';
+import GamesPage from './components/pages/GamesPage';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 
@@ -22,6 +23,7 @@ const App = ({ location }) => (
     <GuestRoute location={location} path="/forgot_password" exact component={ForgotPasswordPage}/> 
     <GuestRoute location={location} path="/reset_password/:token" exact component={ResetPasswordPage}/> 
     <UserRoute location={location} path="/dashboard" exact component={DashboardPage}/>
+    <UserRoute location={location} path="/games" exact component={GamesPage}/>
 </div>
 );
     

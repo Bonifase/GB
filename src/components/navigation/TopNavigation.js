@@ -35,7 +35,7 @@ class TopNavigation extends React.Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">My Games</NavLink>
+              <NavLink href="/games">My Games</NavLink>
             </NavItem>
           </Nav>
           <Nav className="ml-auto" navbar>
