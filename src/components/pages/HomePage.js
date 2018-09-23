@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
 const HomePage = () => (
+    <div>
+    
   <Container
     fluid
     style={{
@@ -16,7 +18,7 @@ const HomePage = () => (
       style={{ height: "100%" }}
     >
       <Col xs={12} sm={6}>
-      <iframe src="https://giphy.com/embed/4R9AFLtsL5Y08" width="480" height="184" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      <iframe src="https://giphy.com/embed/4R9AFLtsL5Y08" width="480" height="184" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><div class="blink_me">&copy; 2018 Game Board By <a href="" >Bonifase</a></div></p>
       </Col>
       <Col
         xs={12}
@@ -51,6 +53,7 @@ const HomePage = () => (
       </Col>
     </Row>
   </Container>
+  </div>
 );
 
 export default HomePage;
