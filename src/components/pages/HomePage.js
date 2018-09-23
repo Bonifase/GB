@@ -16,11 +16,7 @@ const HomePage = () => (
       style={{ height: "100%" }}
     >
       <Col xs={12} sm={6}>
-        <img
-          className="img-fluid"
-          alt="Board Game Logo"
-          src="https://www.oddsonpromotions.com/application/assets/images/GLC_Logo.png"
-        />
+      <iframe src="https://giphy.com/embed/4R9AFLtsL5Y08" width="480" height="184" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </Col>
       <Col
         xs={12}
