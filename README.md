@@ -2,7 +2,7 @@
 
 # [Game Board](https://web-game-board.herokuapp.com)
 
-> ### Gameboard codebase containing real world examples (CRUD, auth, advanced patterns, etc)
+> ### Register an account in Gameboard, Login, create a character and enjoy the game!
 
 ## Getting started
 

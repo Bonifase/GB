@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import 'semantic-ui-css/semantic.min.css';
+import "./index.css"
 import HomePage from './components/pages/HomePage';
 import SignupPage from './components/pages/SignupPage';
 import ConfirmationPage from './components/pages/ConfirmationPage';
