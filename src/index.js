@@ -5,24 +5,22 @@ import 'semantic-ui-css/semantic.min.css';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import decode from 'jwt-decode';
 import { composeWithDevTools } from 'remote-redux-devtools';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import rootReducer from './rootReducer';
-import { userLoggedIn } from './actions/auth';
+import rootReducer from './rootReducer'; 
+import { userFetched, fetchCurrentUser } from './actions/users';
+import setAuthorizationHeader from './utils/setAuthorizationHeader';
 
 const store = createStore(
     rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 if (localStorage.JWT){
-    const payload = decode(localStorage.JWT)
-    const user = { token: localStorage.JWT,
-    email: payload.email,
-    username: payload.username,
-    confirmed: payload.confirmed };
-    store.dispatch(userLoggedIn(user));
+    setAuthorizationHeader(localStorage.JWT)
+    store.dispatch(fetchCurrentUser());
+} else{
+  store.dispatch(userFetched({}))
 }
 
 ReactDOM.render(
