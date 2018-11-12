@@ -13,7 +13,7 @@ import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import LoginPage from './components/pages/LoginPage';
 import DashboardPage from './components/pages/DashboardPage';
-import GamesPage from './components/pages/GamesPage';
+import TopNavigation from './components/navigation/TopNavigation';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import { fetchCurrentUser } from "./actions/users";
