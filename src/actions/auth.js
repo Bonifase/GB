@@ -1,5 +1,6 @@
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from '../types';
 import api from '../api';
+import setAuthorizarionHeader from '../utils/setAuthorizarionHeader';
 
 export const userLoggedIn = (user) => ({
     type: USER_LOGGED_IN,
@@ -12,7 +13,8 @@ export const userLoggedOut = () => ({
 
 export const login = (credentials) => dispatch => api.user.login(credentials).then(user => {
     localStorage.JWT = user.token;
-    dispatch(userLoggedIn(user));
+    setAuthorizarionHeader(user.token)
+    dispatch(userLoggedIn({...user, loaded: true }));
 });
 
 export const logout = () => dispatch => {

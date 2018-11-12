@@ -41,5 +41,11 @@
   "devDependencies": {
     "redux-devtools-extension": "^2.13.5"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8080",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
