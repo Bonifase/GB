@@ -18,6 +18,7 @@ import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import { fetchCurrentUser } from "./actions/users";
 import messages from './messages';
+import CharactersPage from "./components/pages/CharactersPage";
 
 class App extends React.Component {
     componentDidMount() {
@@ -38,6 +39,12 @@ class App extends React.Component {
                 <GuestRoute location={location} path="/forgot_password" exact component={ForgotPasswordPage}/> 
                 <GuestRoute location={location} path="/reset_password/:token" exact component={ResetPasswordPage}/> 
                 <UserRoute location={location} path="/dashboard" exact component={DashboardPage}/>
+                <UserRoute
+                  location={location}
+                  path="/characters"
+                  exact
+                  component={CharactersPage}
+                />
                 </Loader>
             </div>
             </IntlProvider>
