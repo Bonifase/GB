@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Loader from 'react-loader';
+import { IntlProvider } from 'react-intl';
 import 'semantic-ui-css/semantic.min.css';
 import "./index.css"
 import HomePage from './components/pages/HomePage';
@@ -13,11 +14,10 @@ import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
 import LoginPage from './components/pages/LoginPage';
 import DashboardPage from './components/pages/DashboardPage';
-import TopNavigation from './components/navigation/TopNavigation';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import { fetchCurrentUser } from "./actions/users";
-
+import messages from './messages';
 
 class App extends React.Component {
     componentDidMount() {
@@ -25,8 +25,9 @@ class App extends React.Component {
     }
   
     render() {
-      const { location, isAuthenticated, loaded } = this.props;
+      const { location, isAuthenticated, loaded, language } = this.props;
       return (
+          <IntlProvider locals={language} messages={messages[language]}>
             <div className="ui container">
             <Loader loaded={loaded}>
             { isAuthenticated && <TopNavigation/> }
@@ -37,9 +38,9 @@ class App extends React.Component {
                 <GuestRoute location={location} path="/forgot_password" exact component={ForgotPasswordPage}/> 
                 <GuestRoute location={location} path="/reset_password/:token" exact component={ResetPasswordPage}/> 
                 <UserRoute location={location} path="/dashboard" exact component={DashboardPage}/>
-                <UserRoute location={location} path="/games" exact component={GamesPage}/>
                 </Loader>
             </div>
+            </IntlProvider>
             );
     
     }
@@ -51,13 +52,15 @@ App.propTypes = {
   }).isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   fetchCurrentUser: PropTypes.func.isRequired,
-  loaded: PropTypes.bool.isRequired
+  loaded: PropTypes.bool.isRequired,
+  language: PropTypes.string.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     isAuthenticated: !!state.user.email,
-    loaded: state.user.loaded
+    loaded: state.user.loaded,
+    language: state.locals.lang
   };
 }
 

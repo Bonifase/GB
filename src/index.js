@@ -5,6 +5,9 @@ import 'semantic-ui-css/semantic.min.css';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import {addLocaleData} from 'react-intl';
+import en from 'react-intl/locale-data/en';
+import ki from 'react-intl/locale-data/ki';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -12,6 +15,9 @@ import rootReducer from './rootReducer';
 import { userFetched, fetchCurrentUser } from './actions/users';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';
 
+
+addLocaleData(en);
+addLocaleData(ki);
 const composeEnhancers =
   typeof window === 'object' &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
