@@ -8,10 +8,9 @@ const HomePage = () => (
   <Container
     fluid
     style={{
-      height: "100vh",
-      color: "white",
-      background: "linear-gradient(to right, #692022, #1b1819)"
+      height: "100vh"
     }}
+    id="custom"
   >
     <Row
       className="align-items-center justify-content-center text-center"

@@ -66,8 +66,8 @@ class ForgotPasswordForm extends React.Component {
         </button>
 
         <small className="form-text text-center">
-          <Link to="/signup">Sign Up</Link> |
-          <Link to="/login">Login</Link>
+          <Link to="/signup" id="authlink">Sign Up</Link> |
+          <Link to="/login" id="authlink">Login</Link>
         </small>
       </form>
     );
