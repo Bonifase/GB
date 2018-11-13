@@ -66,7 +66,7 @@ class TopNavigation extends React.Component {
           <Nav className="ml-auto" navbar>
             <a role="button" onClick={() => this.props.setLocals("en")}>
               English
-            </a>{" "}
+            </a>
             |
             <a role="button" onClick={() => this.props.setLocals("ki")}>
               Swahili

@@ -30,4 +30,4 @@ Alternatively, you can add `.env` file in the root folder of project to set envi
 
 <br />
 
-         by [Bonifase](https://twitter.com/BonifaseOrwa?lang=en)
+         by Bonifase
