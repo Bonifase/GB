@@ -10,7 +10,7 @@ export default {
         axios.post("https://web-game-board-api.herokuapp.com/api/auth/reset_password_request", { email }), 
         validateToken: token => axios.post("https://web-game-board-api.herokuapp.com/api/auth/validate_token", { token }),
         resetPassword: data => axios.post("https://web-game-board-api.herokuapp.com/api/auth/reset_password", { data }),
-        fetchCurrentUser: () => axios.get("https://web-game-board-api.herokuapp.com/api/users/current_user").then(res => res.data.user)
+        fetchCurrentUser: () => axios.get("http://localhost:5000/api/users/current_user").then(res => res.data.user)
   
     }
 };   
