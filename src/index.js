@@ -14,6 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './rootReducer'; 
 import { userFetched, fetchCurrentUser } from './actions/users';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';
+import { localeSet } from "./actions/locals";
 
 
 addLocaleData(en);
@@ -33,6 +34,10 @@ if (localStorage.JWT){
     store.dispatch(fetchCurrentUser());
 } else{
   store.dispatch(userFetched({}))
+};
+
+if (localStorage.gbLanguage) {
+  store.dispatch(localeSet(localStorage.gbLanguage));
 }
 
 ReactDOM.render(
