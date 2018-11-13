@@ -10,7 +10,7 @@ const HomePage = () => (
     style={{
       height: "100vh",
       color: "white",
-      background: "linear-gradient(to right, #692022, #1b1819)"
+      background: "linear-gradient(to right,  #0bc41b, #1b1819)"
     }}
   >
     <Row
