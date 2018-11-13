@@ -1,9 +1,16 @@
 .blink_me {
-  animation: blinker 3s linear infinite;
+	animation: blinker 3s linear infinite;
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+	50% {
+		opacity: 0;
+	}
+}
+#custom {
+	color: white;
+	background: linear-gradient(to right, #0bc41b, #1b1819);
+}
+#authlink {
+	color: #0eedf5;
 }

@@ -13,7 +13,7 @@ class SignupPage extends React.Component {
       <div className="container" style={{ height: "100vh" }}>
         <div className="row align-items-center" style={{ height: "100vh" }}>
           <div className="col col-xs-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-            <div className="card" style={{ background: "linear-gradient(to right,  #0bc41b, #1b1819)" }}>
+            <div className="card" id="custom">
               <h2 className="card-header">Join the Club!</h2>
               <div className="card-body">
                 <SignupForm submit={this.submit} />

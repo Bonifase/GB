@@ -99,7 +99,7 @@ class SignupForm extends React.Component {
           </button>
   
           <small className="form-text text-center">
-            or <Link to="/login">LOGIN</Link> if you have an account
+            or <Link to="/login" id="authlink">LOGIN</Link> if you have an account
           </small>
         </form>
       );

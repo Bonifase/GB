@@ -82,8 +82,8 @@ class LoginForm extends React.Component {
         </button>
 
         <small className="form-text text-center">
-          <Link to="/signup">Sign up</Link> if you don't have an account<br />
-          <Link to="/forgot_password">Forgot Password?</Link>
+          <Link to="/signup" id="authlink">Sign up</Link> if you don't have an account<br />
+          <Link to="/forgot_password" id="authlink">Forgot Password?</Link>
         </small>
       </form>
     );
