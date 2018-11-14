@@ -31,8 +31,8 @@ class TopNavigation extends React.Component {
     const { user, logout } = this.props;
 
     return (
-      <Navbar light expand="sm" color="faded">
-        <NavbarBrand tag={RouterNavLink} activeClassName="active" to="/">
+      <Navbar light expand="sm" color="faded" id="custom">
+        <NavbarBrand id="navlink" tag={RouterNavLink} activeClassName="active" to="/">
           GameBoard
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
@@ -40,6 +40,7 @@ class TopNavigation extends React.Component {
           <Nav navbar>
             <NavItem>
               <NavLink
+                id="navlink"
                 tag={RouterNavLink}
                 activeClassName="active"
                 to="/dashboard"
@@ -52,6 +53,7 @@ class TopNavigation extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink
+                id="navlink"
                 tag={RouterNavLink}
                 activeClassName="active"
                 to="/characters"
@@ -79,10 +81,10 @@ class TopNavigation extends React.Component {
                   alt="Gravatar"
                 />
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>My Account</DropdownItem>
+              <DropdownMenu right id="droplink">
+                <DropdownItem id="droplink">My Account</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem onClick={() => logout()}>Logout</DropdownItem>
+                <DropdownItem id="droplink" onClick={() => logout()}>Logout</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

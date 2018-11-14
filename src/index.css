@@ -1,3 +1,6 @@
+body {
+	font-family: fantasy;
+}
 .blink_me {
 	animation: blinker 3s linear infinite;
 }
@@ -13,4 +16,16 @@
 }
 #authlink {
 	color: #0eedf5;
+}
+#navlink {
+	color: white;
+	font-weight: bold;
+}
+#droplink {
+	color: white;
+	background: linear-gradient(to right, #0bc41b, #1b1819);
+}
+#droplink :hover {
+	color: white;
+	background-color: blue;
 }
